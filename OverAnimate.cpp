@@ -62,10 +62,36 @@ addAnimation(
         // full, don't add any more
         return;
     }
+    for(int i = 0; i < _lowestAvailableIndex; i++) {
+        if(_animations[i] == animation) {
+            animation->scheduled = true;
+            break;
+        }
+    }
 
     _animations[_lowestAvailableIndex] = animation;
     animation->scheduled = true;
-    _lowestAvailableIndex = _findLowestIndexAbove(_lowestAvailableIndex);
+    _lowestAvailableIndex++;
+}
+
+void
+AnimationSystem::
+removeAnimation(
+    Animation *toRemove
+) {
+    for(int i = 0; i < _lowestAvailableIndex; i++) {
+        Animation *animation = _animations[i];
+        if(animation == toRemove) {
+            animation->scheduled = false;
+            _animations[i] = NULL;
+            // move the rest down
+            for(int j = i; j < _lowestAvailableIndex-1; j++) {
+                _animations[j] = _animations[j+1];
+            }
+            break;
+        }
+    }
+    _lowestAvailableIndex--;
 }
 
 void
@@ -75,15 +101,12 @@ playElapsedTime(
 ) {
     _elapsedTime += deltaAdded;
     
-    for(int i = 0; i < kMaxAnimationCount; i++) {
+    for(int i = 0; i < _lowestAvailableIndex; i++) {
         Animation *animation = _animations[i];
-        if(!animation) {
-            continue;
-        }
         if(_elapsedTime > animation->beginTime) {
             if(_elapsedTime - animation->beginTime > animation->duration) {
-                animation->scheduled = false;
-                _animations[i] = NULL;
+                removeAnimation(animation);
+                i--; // mmmm, mutating while iterating...
                 continue;
             }
             animation->animate(_elapsedTime);
@@ -91,15 +114,3 @@ playElapsedTime(
     }
 }
 
-int
-AnimationSystem::
-_findLowestIndexAbove(
-    int minIndex
-) {
-    for(int i = minIndex; i < kMaxAnimationCount; i++) {
-        if(_animations[i] == NULL) {
-            return i;
-        }
-    }
-    return kMaxAnimationCount;
-}

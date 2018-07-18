@@ -15,13 +15,20 @@ void doIt(int i, float time) {
 
 int main(int argc, char **argv) {
     AnimationSystem system;
-    BoundFunctionAnimation anim(doIt, 0);
-    anim.beginTime = 5;
-    anim.duration = 2;
-    system.addAnimation(&anim);
+    
+    BoundFunctionAnimation anim1(doIt, 0);
+    anim1.beginTime = 5;
+    anim1.duration = 2;
+    system.addAnimation(&anim1);
+    
+    BoundFunctionAnimation anim2(doIt, 1);
+    anim2.beginTime = 6;
+    anim2.duration = 2;
+    system.addAnimation(&anim2);
+    
     while(true) {
         system.playElapsedTime(0.1);
-        if(!anim.scheduled) {
+        if(!anim2.scheduled) {
             return 0;
         }
     }

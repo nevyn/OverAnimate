@@ -65,13 +65,13 @@ public:
     /// finished playing.
     void addAnimation(Animation *animation);
     
+    void removeAnimation(Animation *animation);
+    
     /// Time has elapsed; add it to the internal clock and perform animations
     /// accordingly. If animations have ended, set their `scheduled` to false.
     /// Please call this method often with small deltas.
     void playElapsedTime(float deltaAdded);
     
-private:
-    int _findLowestIndexAbove(int minIndex);
 private:
     Animation* _animations[kMaxAnimationCount];
     TimeInterval _elapsedTime;
