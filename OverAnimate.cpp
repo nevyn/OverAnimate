@@ -3,7 +3,9 @@
 Animation::
 Animation() :
     beginTime(0),
-    duration(0)
+    duration(0),
+    scheduled(0),
+    repeats(0)
 {
 
 }
@@ -34,7 +36,7 @@ BoundFunctionAnimation::
 animate(
     float absoluteTime
 ) {
-    this->function(boundArgument, absoluteTime);
+    this->function(this, boundArgument, absoluteTime);
 }
 
 #pragma mark -
@@ -58,15 +60,12 @@ AnimationSystem::
 addAnimation(
     Animation *animation
 ) {
+    if(animation->scheduled) {
+        return;
+    }
     if(_lowestAvailableIndex == kMaxAnimationCount-1) {
         // full, don't add any more
         return;
-    }
-    for(int i = 0; i < _lowestAvailableIndex; i++) {
-        if(_animations[i] == animation) {
-            animation->scheduled = true;
-            break;
-        }
     }
 
     _animations[_lowestAvailableIndex] = animation;
@@ -79,6 +78,9 @@ AnimationSystem::
 removeAnimation(
     Animation *toRemove
 ) {
+    if(!toRemove->scheduled) {
+        return;
+    }
     for(int i = 0; i < _lowestAvailableIndex; i++) {
         Animation *animation = _animations[i];
         if(animation == toRemove) {
@@ -105,8 +107,12 @@ playElapsedTime(
         Animation *animation = _animations[i];
         if(_elapsedTime > animation->beginTime) {
             if(_elapsedTime - animation->beginTime > animation->duration) {
-                removeAnimation(animation);
-                i--; // mmmm, mutating while iterating...
+                if(animation->repeats) {
+                    animation->beginTime = now();
+                } else {
+                    removeAnimation(animation);
+                    i--; // mmmm, mutating while iterating...
+                }
                 continue;
             }
             animation->animate(_elapsedTime);

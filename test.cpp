@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include "OverAnimate.h"
 
-void doIt(int i, float time) {
+void doIt(Animation *self, int i, float time) {
     printf("lol %d %f\n", i, time);
 }
 

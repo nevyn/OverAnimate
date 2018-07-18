@@ -23,6 +23,9 @@ public:
     /// addAnimation, and becomes false after the system time is over `beginTime+duration`.
     bool scheduled;
     
+    /// Does the animation repeat? If so, beginTime is set to now() instead of removing it upon end.
+    bool repeats;
+    
     Animation();
 protected:
     // Override this. After the system's time is over `beginTime`, but under
@@ -31,7 +34,7 @@ protected:
     virtual void animate(float absoluteTime) = 0;
 };
 
-typedef void(*AnimationFunction)(int, float);
+typedef void(*AnimationFunction)(Animation*, int, float);
 /*! @class BoundFunctionAnimation
  *  Simple helper animation that takes a function and an int,
  *  and during animation, calls the function with the int and the elapsed time.
