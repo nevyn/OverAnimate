@@ -1,0 +1,253 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05235A041D6FEA6200E3C6B8 /* OverAnimate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05235A021D6FEA6200E3C6B8 /* OverAnimate.cpp */; };
+		05235A061D6FEA7D00E3C6B8 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05235A051D6FEA7D00E3C6B8 /* test.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		052359F61D6FEA4300E3C6B8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		052359F81D6FEA4300E3C6B8 /* OverAnimate */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OverAnimate; sourceTree = BUILT_PRODUCTS_DIR; };
+		05235A021D6FEA6200E3C6B8 /* OverAnimate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OverAnimate.cpp; sourceTree = SOURCE_ROOT; };
+		05235A031D6FEA6200E3C6B8 /* OverAnimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverAnimate.h; sourceTree = SOURCE_ROOT; };
+		05235A051D6FEA7D00E3C6B8 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		052359F51D6FEA4300E3C6B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		052359EF1D6FEA4300E3C6B8 = {
+			isa = PBXGroup;
+			children = (
+				052359FA1D6FEA4300E3C6B8 /* OverAnimate */,
+				052359F91D6FEA4300E3C6B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		052359F91D6FEA4300E3C6B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				052359F81D6FEA4300E3C6B8 /* OverAnimate */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		052359FA1D6FEA4300E3C6B8 /* OverAnimate */ = {
+			isa = PBXGroup;
+			children = (
+				05235A031D6FEA6200E3C6B8 /* OverAnimate.h */,
+				05235A021D6FEA6200E3C6B8 /* OverAnimate.cpp */,
+				05235A051D6FEA7D00E3C6B8 /* test.cpp */,
+			);
+			name = OverAnimate;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		052359F71D6FEA4300E3C6B8 /* OverAnimate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 052359FF1D6FEA4300E3C6B8 /* Build configuration list for PBXNativeTarget "OverAnimate" */;
+			buildPhases = (
+				052359F41D6FEA4300E3C6B8 /* Sources */,
+				052359F51D6FEA4300E3C6B8 /* Frameworks */,
+				052359F61D6FEA4300E3C6B8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OverAnimate;
+			productName = OverAnimate;
+			productReference = 052359F81D6FEA4300E3C6B8 /* OverAnimate */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		052359F01D6FEA4300E3C6B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = ThirdCog;
+				TargetAttributes = {
+					052359F71D6FEA4300E3C6B8 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 052359F31D6FEA4300E3C6B8 /* Build configuration list for PBXProject "OverAnimate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 052359EF1D6FEA4300E3C6B8;
+			productRefGroup = 052359F91D6FEA4300E3C6B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				052359F71D6FEA4300E3C6B8 /* OverAnimate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		052359F41D6FEA4300E3C6B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05235A041D6FEA6200E3C6B8 /* OverAnimate.cpp in Sources */,
+				05235A061D6FEA7D00E3C6B8 /* test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		052359FD1D6FEA4300E3C6B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		052359FE1D6FEA4300E3C6B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		05235A001D6FEA4300E3C6B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05235A011D6FEA4300E3C6B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		052359F31D6FEA4300E3C6B8 /* Build configuration list for PBXProject "OverAnimate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				052359FD1D6FEA4300E3C6B8 /* Debug */,
+				052359FE1D6FEA4300E3C6B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		052359FF1D6FEA4300E3C6B8 /* Build configuration list for PBXNativeTarget "OverAnimate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05235A001D6FEA4300E3C6B8 /* Debug */,
+				05235A011D6FEA4300E3C6B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 052359F01D6FEA4300E3C6B8 /* Project object */;
+}
