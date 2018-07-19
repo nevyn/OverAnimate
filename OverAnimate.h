@@ -30,8 +30,8 @@ public:
 protected:
     // Override this. After the system's time is over `beginTime`, but under
     // `beginTime+duration`, this function will be called every "frame" with the
-    // system time as argument.
-    virtual void animate(float absoluteTime) = 0;
+    // fraction of completion as argument.
+    virtual void animate(float fraction) = 0;
 };
 
 typedef void(*AnimationFunction)(Animation*, int, float);

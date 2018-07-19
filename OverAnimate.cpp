@@ -106,7 +106,8 @@ playElapsedTime(
     for(int i = 0; i < _lowestAvailableIndex; i++) {
         Animation *animation = _animations[i];
         if(_elapsedTime > animation->beginTime) {
-            if(_elapsedTime - animation->beginTime > animation->duration) {
+            float fraction = (_elapsedTime - animation->beginTime) / animation->duration;
+            if(fraction >= 1.0) {
                 if(animation->repeats) {
                     animation->beginTime = now();
                 } else {
@@ -115,7 +116,7 @@ playElapsedTime(
                 }
                 continue;
             }
-            animation->animate(_elapsedTime);
+            animation->animate(fraction);
         }
     }
 }
