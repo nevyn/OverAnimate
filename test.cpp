@@ -5,6 +5,7 @@
 //  Created by Nevyn Bengtsson on 2016-08-25.
 //  Copyright © 2016 ThirdCog. All rights reserved.
 //
+#if !ARDUINO
 
 #include <stdio.h>
 #include "OverAnimate.h"
@@ -34,3 +35,5 @@ int main(int argc, char **argv) {
     }
     return 0;
 }
+
+#endif
