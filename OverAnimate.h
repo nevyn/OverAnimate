@@ -22,6 +22,9 @@ public:
     /// Is the animation part of a system right now? It is true from the time you say
     /// addAnimation, and becomes false after the system time is over `beginTime+duration`.
     bool scheduled;
+
+    /// if not enabled, animation will not be processed
+    bool enabled;
     
     /// Does the animation repeat? If so, beginTime is set to now() instead of removing it upon end.
     bool repeats;

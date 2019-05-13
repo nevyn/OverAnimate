@@ -5,6 +5,7 @@ Animation() :
     beginTime(0),
     duration(0),
     scheduled(0),
+    enabled(1),
     repeats(0)
 {
 
@@ -105,6 +106,9 @@ playElapsedTime(
     
     for(int i = 0; i < _lowestAvailableIndex; i++) {
         Animation *animation = _animations[i];
+        if(!animation->enabled) {
+            continue;
+        }
         if(_elapsedTime > animation->beginTime) {
             float fraction = (_elapsedTime - animation->beginTime) / animation->duration;
             if(fraction >= 1.0) {
