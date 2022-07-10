@@ -116,9 +116,9 @@ playElapsedTime(
                     animation->beginTime = now();
                 } else {
                     removeAnimation(animation);
-                    i--; // mmmm, mutating while iterating...
+                    i--;
+                    continue;
                 }
-                continue;
             }
             animation->animate(fraction);
         }
