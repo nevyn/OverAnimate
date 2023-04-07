@@ -29,7 +29,7 @@ public:
     /// Does the animation repeat? If so, beginTime is set to now() instead of removing it upon end.
     bool repeats;
     
-    Animation();
+    Animation(TimeInterval duration = 1.0, bool repeats = false);
 protected:
     // Override this. After the system's time is over `beginTime`, but under
     // `beginTime+duration`, this function will be called every "frame" with the
@@ -48,7 +48,7 @@ class BoundFunctionAnimation : public Animation
 public:
     AnimationFunction function;
     int boundArgument;
-    BoundFunctionAnimation(AnimationFunction func, int boundArgument);
+    BoundFunctionAnimation(AnimationFunction func, int boundArgument, TimeInterval duration = 1.0, bool repeats = false);
 protected:
     void animate(float absoluteTime);
 };

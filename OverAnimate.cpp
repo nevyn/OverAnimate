@@ -1,12 +1,12 @@
 #include "OverAnimate.h"
 
 Animation::
-Animation() :
+Animation(TimeInterval duration, bool repeats) :
     beginTime(0),
-    duration(0),
+    duration(duration),
     scheduled(0),
     enabled(1),
-    repeats(0)
+    repeats(repeats)
 {
 
 }
@@ -24,8 +24,11 @@ animate(
 BoundFunctionAnimation::
 BoundFunctionAnimation(
     AnimationFunction func,
-    int boundArgument
+    int boundArgument,
+    TimeInterval duration,
+    bool repeats
 ) :
+    Animation(duration, repeats),
     function(func),
     boundArgument(boundArgument)
 {
