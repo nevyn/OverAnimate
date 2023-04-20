@@ -4,7 +4,7 @@
 class AnimationSystem;
 
 /// Time in seconds.
-typedef float TimeInterval;
+typedef double TimeInterval;
 
 /*!
  * @class Animation
