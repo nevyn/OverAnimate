@@ -34,6 +34,12 @@ public:
             x = 0; // avoid crash :P
         return leds[x];
     }
+    virtual void set(int x, CRGB v)
+    {
+        if(x >= _length) return;
+
+        leds[x] = v;
+    }
 private:
     int _length;
 };
@@ -67,6 +73,11 @@ public:
     struct CRGB& operator[](int x)
     {
         return (*strips[0])[x];
+    }
+    virtual void set(int x, CRGB v)
+    {
+        for(const auto strip: strips)
+            strip->set(x, v);
     }
 };
 
