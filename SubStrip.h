@@ -4,6 +4,7 @@ class SubStrip
 {
 public:
     CRGB *leds;
+    SubStrip() {}
 
     SubStrip(CRGB *start, int length)
     {
@@ -11,23 +12,23 @@ public:
         this->_length = length;
     }
 
-    int numPixels()
+    virtual int numPixels()
     {
         return _length;
     }
 
-    void fill(const struct CRGB &color)
+    virtual void fill(const struct CRGB &color)
     {
         fill_solid(leds, _length, color);
     }
-    void fill(const struct CRGB &color, int start, int length)
+    virtual void fill(const struct CRGB &color, int start, int length)
     {
         if(start + length > _length)
             length = _length - start; // no crashy plssss
         fill_solid(leds+start, length, color);
     }
 
-    struct CRGB& operator[](int x)
+    virtual struct CRGB& operator[](int x)
     {
         if(x >= _length)
             x = 0; // avoid crash :P
@@ -35,6 +36,38 @@ public:
     }
 private:
     int _length;
+};
+
+class ProxyStrip : public SubStrip
+{
+public:
+    std::vector<SubStrip*> strips;
+
+    ProxyStrip(std::vector<SubStrip*> strips)
+      : strips(strips)
+    {
+    }
+
+    int numPixels()
+    {
+        return strips[0]->numPixels();
+    }
+
+    void fill(const struct CRGB &color)
+    {
+        for(const auto& strip: strips)
+            strip->fill(color);
+    }
+    void fill(const struct CRGB &color, int start, int length)
+    {
+        for(const auto strip: strips)
+            strip->fill(color, start, length);
+    }
+
+    struct CRGB& operator[](int x)
+    {
+        return (*strips[0])[x];
+    }
 };
 
 template <typename T> T clamp(T value, T low, T high)
