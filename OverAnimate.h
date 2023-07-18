@@ -68,9 +68,13 @@ public:
     float now();
     
     /// Schedule an animation for playback. Its `scheduled` flag will be set, and then un-set after it has
-    /// finished playing.
-    void addAnimation(Animation *animation);
+    /// finished playing. Returns the index of the animation in the current runlist, or -1 if
+    /// we couldn't add the animation.
+    int addAnimation(Animation *animation);
     
+    // removes an animation based on its index in the runlist.
+    void removeAnimation(int i);
+    // removes an animation, which stops it from running
     void removeAnimation(Animation *animation);
     
     /// Time has elapsed; add it to the internal clock and perform animations
