@@ -85,6 +85,8 @@ AnimationSystem::
 removeAnimation(
     int idx
 ) {
+    if(idx < 0) return;
+
     Animation *animation = _animations[idx];
     if(idx >= _lowestAvailableIndex || !animation) return;
 
@@ -103,7 +105,7 @@ AnimationSystem::
 removeAnimation(
     Animation *toRemove
 ) {
-    if(!toRemove->scheduled) {
+    if(!toRemove || !toRemove->scheduled) {
         return;
     }
     for(int i = 0; i < _lowestAvailableIndex; i++) {
