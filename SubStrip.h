@@ -1,3 +1,5 @@
+#ifndef __SUBSTRIP__H
+#define __SUBSTRIP__H
 #include <FastLED.h>
 #include <vector>
 
@@ -120,3 +122,5 @@ CRGB operator*( const CRGB& p1, float f)
 {
     return CRGB(p1.r*f, p1.g*f, p1.b*f);
 }
+
+#endif
