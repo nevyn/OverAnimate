@@ -1,4 +1,5 @@
 #include <FastLED.h>
+#include <vector>
 
 class SubStrip
 {
