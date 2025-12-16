@@ -91,18 +91,18 @@ template <typename T> T clamp(T value, T low, T high)
 
 extern const uint8_t g_gamma8[256];
 
-uint8_t gamma8(uint8_t x)
+inline uint8_t gamma8(uint8_t x)
 {
     return g_gamma8[x];
 }
 
-float gammaf(float f)
+inline float gammaf(float f)
 {
     // stupid, I can't find lgammaf in math.h on arduino?
     return gamma8(f*255)/(float)255;
 }
 
-CRGB operator*( const CRGB& p1, float f)
+inline CRGB operator*( const CRGB& p1, float f)
 {
     return CRGB(p1.r*f, p1.g*f, p1.b*f);
 }
