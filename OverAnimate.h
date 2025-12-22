@@ -50,7 +50,7 @@ public:
     int boundArgument;
     BoundFunctionAnimation(AnimationFunction func, int boundArgument, TimeInterval duration = 1.0, bool repeats = false);
 protected:
-    void animate(float absoluteTime);
+    void animate(float fraction);
 };
 
 /// Since Arduino has no memory allocation, this sytem only supports a fixed number of animations.

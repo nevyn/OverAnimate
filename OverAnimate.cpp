@@ -14,7 +14,7 @@ Animation(TimeInterval duration, bool repeats) :
 void
 Animation::
 animate(
-    float absoluteTime
+    float fraction
 ) {
 
 }
@@ -38,9 +38,9 @@ BoundFunctionAnimation(
 void
 BoundFunctionAnimation::
 animate(
-    float absoluteTime
+    float fraction
 ) {
-    this->function(this, boundArgument, absoluteTime);
+    this->function(this, boundArgument, fraction);
 }
 
 #pragma mark -
