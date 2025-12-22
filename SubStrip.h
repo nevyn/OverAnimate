@@ -20,6 +20,11 @@ public:
         return _length;
     }
 
+    virtual void setNumPixels(int newLength)
+    {
+        _length = newLength;
+    }
+
     virtual void fill(const struct CRGB &color)
     {
         fill_solid(leds, _length, color);
@@ -60,6 +65,12 @@ public:
     int numPixels()
     {
         return strips[0]->numPixels();
+    }
+
+    void setNumPixels(int newLength)
+    {
+        for(const auto& strip: strips)
+            strip->setNumPixels(newLength);
     }
 
     void fill(const struct CRGB &color)
