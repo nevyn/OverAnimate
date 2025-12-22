@@ -53,7 +53,7 @@ AnimationSystem() :
     memset(_animations, 0, kMaxAnimationCount*sizeof(Animation*));
 }
 
-float
+TimeInterval
 AnimationSystem::
 now()  {
     return _elapsedTime;

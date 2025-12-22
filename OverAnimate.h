@@ -65,7 +65,7 @@ public:
     AnimationSystem();
     
     /// What's the sum of all deltas added? Animations added at now() will start playing immediately.
-    float now();
+    TimeInterval now();
     
     /// Schedule an animation for playback. Its `scheduled` flag will be set, and then un-set after it has
     /// finished playing. Returns the index of the animation in the current runlist, or -1 if
